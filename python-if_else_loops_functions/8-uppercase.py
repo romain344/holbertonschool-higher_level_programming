@@ -1,3 +1,4 @@
+#!/usr/bin/pyton3
 def uppercase(str):
 def uppercase(str):
     result = ""
