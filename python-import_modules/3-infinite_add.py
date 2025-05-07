@@ -1,10 +1,7 @@
 #!/usr/bin/python3
+import sys
 if __name__ == "__main__":
-    import sys
-
-    somme = 0
-
-    for arg in sys.argv[1:]:
-        somme += int(arg)
-
-        print(somme)
+    result = 0
+    for i in range(1, len(sys.argv)):
+        result += int(sys.argv[i])
+        print(result)
