@@ -2,6 +2,10 @@
 """Defines an object attribute lookup function"""
 
 
-def lookup(obj):
-    """Returns a list of available attributes and methods of an object"""
-    return (list(dir(obj)))
+def is_same_class(obj, a_class):
+    """fonction"""
+
+    if type(obj) is a_class:
+        return True
+    else:
+        return False
