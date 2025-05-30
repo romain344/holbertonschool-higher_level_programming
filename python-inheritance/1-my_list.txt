@@ -1,0 +1,23 @@
+#!/usr/bin/python3
+MyList = __import__('1-my_list').MyList
+
+my_list = MyList()
+my_list.append(3)
+my_list.append(1)
+my_list.append(2)
+
+# Test que print_sorted affiche la liste triée (on capte la sortie)
+import io
+import sys
+
+captured_output = io.StringIO()          # Création d'un buffer pour capturer print
+sys.stdout = captured_output             # Redirection de stdout vers ce buffer
+my_list.print_sorted()                   # Appel de la méthode
+sys.stdout = sys.__stdout__              # Rétablissement de stdout
+
+assert captured_output.getvalue() == "[1, 2, 3]\n", "print_sorted does not print sorted list"
+
+# Test que la liste originale n'est pas modifiée
+assert my_list == [3, 1, 2], "Original list was modified"
+
+print("All tests passed!")
