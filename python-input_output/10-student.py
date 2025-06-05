@@ -9,9 +9,9 @@ class Student:
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
-    
+
     def to_json(self, attrs=None):
-        if attrs is None:
-            return self
-        if not isinstance(attrs, list):
-            return self
+        if isinstance(attrs, list) and all(type(a) == str for a in attrs):
+            return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
+        else:
+            return self.__dict__.copy()
