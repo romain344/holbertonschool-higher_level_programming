@@ -2,7 +2,6 @@ from flask import Flask, jsonify, request
 
 app = Flask(__name__)
 
-# Dictionnaire en mémoire pour stocker les utilisateurs
 users = {}
 
 @app.route('/', methods=['GET'])
@@ -11,7 +10,6 @@ def home():
 
 @app.route('/data', methods=['GET'])
 def get_data():
-    # Retourne la liste des usernames
     return jsonify(list(users.keys()))
 
 @app.route('/status', methods=['GET'])
@@ -37,7 +35,8 @@ def add_user():
         return jsonify({"error": "Username is required"}), 400
 
     if username in users:
-        return jsonify({"error": "User already exists"}), 400
+        # Message ajusté ici
+        return jsonify({"error": "Username already exists"}), 400
 
     users[username] = {
         "username": username,
