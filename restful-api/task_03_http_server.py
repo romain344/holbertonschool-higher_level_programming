@@ -3,11 +3,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import json
 
 class SimpleAPIHandler(BaseHTTPRequestHandler):
-    def _send_json(self, data, status=200):
-        self.send_response(status)
-        self.send_header("Content-Type", "application/json")
-        self.end_headers()
-        self.wfile.write(json.dumps(data).encode())
 
     def do_GET(self):
         if self.path == "/":
@@ -16,14 +11,26 @@ class SimpleAPIHandler(BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(b"Hello, this is a simple API!")
         elif self.path == "/data":
-            self._send_json({"name": "John", "age": 30, "city": "New York"})
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            data = {"name": "John", "age": 30, "city": "New York"}
+            self.wfile.write(json.dumps(data).encode())
         elif self.path == "/status":
-            self._send_json({"status": "OK"})
+            self.send_response(200)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            status = {"status": "OK"}
+            self.wfile.write(json.dumps(status).encode())
         else:
-            self._send_json({"error": "Endpoint not found"}, status=404)
+            self.send_response(404)
+            self.send_header("Content-Type", "application/json")
+            self.end_headers()
+            error = {"error": "Endpoint not found"}
+            self.wfile.write(json.dumps(error).encode())
 
 def run():
-    server_address = ("", 8000)
+    server_address = ('', 8000)
     httpd = HTTPServer(server_address, SimpleAPIHandler)
     httpd.serve_forever()
 
