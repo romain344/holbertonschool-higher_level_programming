@@ -31,10 +31,9 @@ def get_user(username):
         return jsonify({"error": "User not found"}), 404
 
 @app.route("/add_user", methods=["POST"])
-def add_user():
-    data = request.get_json()
-    if not data:
-        return jsonify({"error": "Invalid JSON"}), 400
+def get_data():
+    # Retourne la liste des usernames présents dans le dictionnaire users
+    return jsonify(list(users.keys()))
 
     username = data.get("username")
     if not username:
