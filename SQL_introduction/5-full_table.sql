@@ -1,2 +1,2 @@
--- select * from first_table;
-SELECT * FROM first_table;
+-- liste les tables creees
+SHOW CREATE TABLE first_table;
