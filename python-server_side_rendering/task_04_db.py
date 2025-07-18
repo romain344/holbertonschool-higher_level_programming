@@ -59,7 +59,7 @@ def products():
     if product_id:
         try:
             product_id = int(product_id)
-            data = [item for item in data if int(item['id']) == product_id]
+            data = [item for item in data if int(item.get('id', -1)) == product_id]
             if not data:
                 error = "Product not found"
         except ValueError:
