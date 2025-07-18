@@ -9,7 +9,7 @@ def read_from_json():
     try:
         with open('products.json', 'r') as file:
             data = json.load(file)
-            return data.get('products', [])
+            return data
     except Exception as e:
         return {'error': f"Error reading JSON file: {e}"}
 
