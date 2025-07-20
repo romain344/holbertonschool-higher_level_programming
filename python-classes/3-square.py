@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """definie la class"""
+
+
 class Square:
     """class square"""
     def __init__(self, size=0):
