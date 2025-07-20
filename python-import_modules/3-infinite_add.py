@@ -8,4 +8,4 @@ if __name__ == '__main__':
          number = int(argv[number])
          total += number
 
-     print(total)
+    print(total)
