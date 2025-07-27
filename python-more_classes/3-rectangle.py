@@ -3,7 +3,7 @@
 
 
 class Rectangle:
-    """"Defines a rectangle with area and perimeter."""
+    """Defines a rectangle with area and perimeter."""
 
     def __init__(self, width=0, height=0):
         self.width = width
@@ -36,11 +36,20 @@ class Rectangle:
         self.__height = value
 
     def area(self):
-        """return the area of the rectangle"""
+        """Return the area of the rectangle"""
         return self.width * self.height
 
     def perimeter(self):
-        """return the perimeter of the rectangle"""
+        """Return the perimeter of the rectangle"""
         if self.width == 0 or self.height == 0:
             return 0
         return 2 * (self.width + self.height)
+
+    def __str__(self):
+        """Return the rectangle represented with the character '#'."""
+        if self.width == 0 or self.height == 0:
+            return ""
+        lines = []
+        for _ in range(self.height):
+            lines.append('#' * self.width)
+        return '\n'.join(lines)
