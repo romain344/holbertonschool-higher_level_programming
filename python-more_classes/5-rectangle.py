@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-"""This module defines a Rectangle class with width, height, area, perimeter, and string representations"""
-
+"""This module defines a Rectangle class."""
 
 class Rectangle:
     def __init__(self, width=0, height=0):
