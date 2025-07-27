@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-"""defines a rectangle class with instance countring"""
-
+"""This module defines a Rectangle class that counts instances."""
 
 class Rectangle:
-    """a class that defines a rectangle by its witdh and height"""
+    """A class that defines a rectangle by its width and height."""
     number_of_instances = 0
 
     def __init__(self, width=0, height=0):
@@ -50,10 +49,10 @@ class Rectangle:
         for i in range(self.__height):
             line.append("#" * self.__width)
         return "\n".join(line)
-    
+
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
-    
+
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
