@@ -1,4 +1,7 @@
 #!/usr/bin/python3
+"""This module defines a Rectangle class with width, height, area, perimeter, and string representations"""
+
+
 class Rectangle:
     def __init__(self, width=0, height=0):
         self.width = width
@@ -43,9 +46,9 @@ class Rectangle:
         for i in range(self.__height):
             line.append("#" * self.__width)
         return "\n".join(line)
-    
+
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
-    
+
     def __del__(self):
-        print("un petit cs")
+        print("Bye rectangle...")
