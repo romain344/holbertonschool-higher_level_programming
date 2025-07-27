@@ -1,7 +1,10 @@
 #!/usr/bin/python3
-"""This module defines a Rectangle class."""
+"""Defines a Rectangle class."""
+
 
 class Rectangle:
+    """Defines a rectangle and prints message on deletion."""
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
@@ -41,10 +44,7 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        line = []
-        for i in range(self.__height):
-            line.append("#" * self.__width)
-        return "\n".join(line)
+        return "\n".join(["#" * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
