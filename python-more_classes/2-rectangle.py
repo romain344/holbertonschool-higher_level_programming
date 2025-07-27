@@ -12,8 +12,8 @@ class Rectangle:
     def width(self):
         """get the width of the rectangle"""
         return self.__width
-    @width.setter
 
+    @width.setter
     def width(self, value):
         """set the width od the rectangle """
         if not isinstance(value, int):
