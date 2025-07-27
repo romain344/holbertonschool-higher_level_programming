@@ -3,8 +3,7 @@
 
 
 class Rectangle:
-    """Defines a rectangle and prints message on deletion."""
-
+    """A class that defines a rectangle by its width and height."""
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
