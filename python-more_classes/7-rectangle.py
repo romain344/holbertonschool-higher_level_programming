@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""Defines a Rectangle class."""
+
+
 class Rectangle:
+    """A class that defines a rectangle by its width and height."""
     number_of_instances = 0
     print_symbol = "#"
 
@@ -43,12 +47,12 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        line = str(self.print_symbol) * self.__width
-        return "\n".join([line for _ in range(self.__height)])
+        symbol = str(self.print_symbol)
+        return "\n".join([symbol * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
