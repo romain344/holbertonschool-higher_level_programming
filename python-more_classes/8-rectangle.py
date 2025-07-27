@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""define la class rectangle"""
+
+
 class Rectangle:
+    """A class that defines a rectangle by its width and height"""
     number_of_instances = 0
     print_symbol = "#"
 
@@ -43,22 +47,24 @@ class Rectangle:
     def __str__(self):
         if self.__width == 0 or self.__height == 0:
             return ""
-        line = str(self.print_symbol) * self.__width
-        return "\n".join([line for _ in range(self.__height)])
+        symbol = str(self.print_symbol)
+        return "\n".join([symbol * self.__width for _ in range(self.__height)])
 
     def __repr__(self):
         return f"Rectangle({self.__width}, {self.__height})"
 
     def __del__(self):
-        print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
-    @staticmethod
+        print("Bye rectangle...")
 
+    @staticmethod
     def bigger_or_equal(rect_1, rect_2):
+        """Returns the biggest rectangle based on area."""
         if not isinstance(rect_1, Rectangle):
             raise TypeError("rect_1 must be an instance of Rectangle")
         if not isinstance(rect_2, Rectangle):
             raise TypeError("rect_2 must be an instance of Rectangle")
+
         if rect_1.area() >= rect_2.area():
             return rect_1
         return rect_2
