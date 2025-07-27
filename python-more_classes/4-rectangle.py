@@ -54,7 +54,7 @@ class Rectangle:
         for i in range(self.__height):
             line.append("#" * self.__width)
         return "\n".join(line)
-    
+
     def __repr__(self):
         """return a string representation of the rectangle"""
         return f"Rectangle({self.__width}, {self.__height})"
