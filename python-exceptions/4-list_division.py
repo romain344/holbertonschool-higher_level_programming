@@ -6,7 +6,8 @@ def list_division(my_list_1, my_list_2, list_length):
         try:
             num1 = my_list_1[i]
             num2 = my_list_2[i]
-            if not isinstance(num1, (int, float)) or not isinstance(num2, (int, float)):
+            if not isinstance(num1, (int, float)) or \
+               not isinstance(num2, (int, float)):
                 print("wrong type")
             else:
                 result = num1 / num2
