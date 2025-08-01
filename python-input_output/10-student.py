@@ -13,7 +13,7 @@ class Student:
 
     def to_json(self, attrs=None):
         """Returns the dictionary description with simple data structure"""
-        if isinstance(attrs, list) and all(type(a) == str for a in attrs):
+        if isinstance(attrs, list) and all(isinstance(a, str) for a in attrs):
             return {k: getattr(self, k) for k in attrs if hasattr(self, k)}
         else:
-            return self.__dict__.copy() 
+            return self.__dict__.copy()
