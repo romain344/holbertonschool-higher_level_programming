@@ -13,10 +13,19 @@ if __name__ == "__main__":
         sys.exit(1)
 
     user, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
-    engine = create_engine(f"mysql+mysqldb://{user}:{password}@localhost/{db_name}", pool_pre_ping=True)
+    engine = create_engine(
+        f"mysql+mysqldb://{user}:{password}@localhost/{db_name}",
+        pool_pre_ping=True
+    )
     Session = sessionmaker(bind=engine)
     session = Session()
-    results = session.query(City, State).join(State, City.state_id == State.id).order_by(City.id).all()
+
+    results = (
+        session.query(City, State)
+        .join(State, City.state_id == State.id)
+        .order_by(City.id)
+        .all()
+    )
 
     for city, state in results:
         print(f"{state.name}: ({city.id}) {city.name}")
