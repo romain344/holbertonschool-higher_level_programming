@@ -1,8 +1,9 @@
 #!/usr/bin/python3
 """Defines the City class mapped to the cities table."""
 
+
 from sqlalchemy import Column, Integer, String, ForeignKey
-from model_state import Base  # on importe Base depuis model_state
+from model_state import Base
 
 class City(Base):
     """City class mapped to the 'cities' table in the database."""
