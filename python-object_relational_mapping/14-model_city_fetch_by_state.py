@@ -9,7 +9,10 @@ from model_city import City
 
 if __name__ == "__main__":
     if len(sys.argv) != 4:
-        print("Usage: ./14-model_city_fetch_by_state.py <user> <password> <database>")
+        print(
+             "Usage: ./14-model_city_fetch_by_state.py "
+             "<user> <password> <database>"
+        )
         sys.exit(1)
 
     user, password, db_name = sys.argv[1], sys.argv[2], sys.argv[3]
