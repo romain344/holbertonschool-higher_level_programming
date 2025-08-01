@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Lists all states where name matches the argument from the database (safe from SQL injection)"""
+"""import MySQLdb and filter states by name"""
 
 import MySQLdb
 import sys
