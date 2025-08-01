@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """inport MySQLdb"""
 
-
 import MySQLdb
 import sys
 
@@ -18,7 +17,7 @@ if __name__ == "__main__":
         passwd=password,
         db=db_name
     )
-    cursor = db.cursor() 
+    cursor = db.cursor()
     cursor.execute(
         "SELECT * FROM states WHERE name LIKE BINARY 'N%' ORDER BY id ASC"
     )
