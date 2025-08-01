@@ -1,13 +1,15 @@
 #!/usr/bin/python3
-"""import SQL et SY"""
+""" inport MySQLdb"""
+
 import MySQLdb
 import sys
 
-
 if __name__ == "__main__":
+
     username = sys.argv[1]
     password = sys.argv[2]
     db_name = sys.argv[3]
+
 
     db = MySQLdb.connect(
         host="localhost",
@@ -16,11 +18,15 @@ if __name__ == "__main__":
         passwd=password,
         db=db_name
     )
-    cur = db.cursor()
-    cur.execute(
+
+    cursor = db.cursor()
+
+ 
+    cursor.execute(
     )
-    rows = cur.fetchall()
-    for row in rows:
+    for row in cursor.fetchall():
         print(row)
-    cur.close()
+
+
+    cursor.close()
     db.close()
