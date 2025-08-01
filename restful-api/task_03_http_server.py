@@ -45,7 +45,7 @@ class SimpleAPIHandler(http.server.BaseHTTPRequestHandler):
             self.send_header("Content-type", "application/json")
             self.end_headers()
             error = {"error": "Endpoint not found"}
-            self.wfile.write(json.dumps(error).encode('utf-8'))
+            self.wfile.write(json.dumps(error, separators=(',', ':')).encode('utf-8'))
 
 if __name__ == "__main__":
     with socketserver.TCPServer(("", PORT), SimpleAPIHandler) as httpd:
