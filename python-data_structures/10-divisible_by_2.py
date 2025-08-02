@@ -1,5 +1,9 @@
 #!/usr/bin/python3
+"""défine la fonction"""
+
+
 def divisible_by_2(my_list=[]):
+    """vérifie si les éléments de la liste sont divisibles par 2"""
     result = []
 
     for num in my_list:
