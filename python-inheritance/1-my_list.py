@@ -1,8 +1,10 @@
 #!/usr/bin/python3
-"""Defines an object attribute lookup function"""
-class MyList(list):
-    """A subclass of list that includes a method to print sorted elements"""
+"""Module that defines MyList class"""
 
+
+class MyList(list):
+    """MyList class that inherits from list"""
+    
     def print_sorted(self):
-        sorted(list)
-        print(list)
+        """Prints the list in sorted order"""
+        print(sorted(self))
